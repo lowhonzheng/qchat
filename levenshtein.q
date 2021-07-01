@@ -7,7 +7,7 @@ lvn:{[s;t]
   d:(1+m;1+n)#0;
   d[0]:til 1+n;d[;0]:til 1+m;
   d:{[m;t;s;d;x]
-     {[t;s;x;d;y] c:s[x]<>t[y];d[y;x]:min (d[y-1;x]+1;d[y;x-1]+1;d[y-1;x-1]+c);d}[t;s;x]/[d;1+til m]
+     {[t;s;x;d;y] c:s[x-1]<>t[y-1];d[y;x]:min (d[y-1;x]+1;d[y;x-1]+1;d[y-1;x-1]+c);d}[t;s;x]/[d;1+til m]
    }[m;t;s]/[d;1+til n];
   :last last d;
  }
